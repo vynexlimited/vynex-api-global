@@ -1,0 +1,51 @@
+# Vynex API
+
+> Vynex API is a unified LLM gateway. It exposes a single OpenAI-compatible
+> `/v1` endpoint that routes to GPT-5.x, Claude (Opus/Sonnet/Haiku 4.x),
+> Gemini 3.x, DeepSeek, Qwen, and GLM. Developers keep their existing OpenAI
+> SDK, change the base_url, and select models by name.
+
+Vynex API lets developers call every major frontier LLM — GPT, Claude,
+Gemini, DeepSeek, Qwen, and GLM — from a single OpenAI-compatible API endpoint
+(https://llm-api.vynexcloud.com/v1). There is no new SDK to learn and no
+integration code to rewrite: point any OpenAI-compatible client at the Vynex
+base_url and switch models by changing the `model` field. Streaming,
+function/tool calling, and the standard OpenAI request parameters are
+supported. Pricing is per-token and published transparently.
+
+## Use cases
+- Testing and A/B-comparing frontier models without re-integrating each one
+- Building LLM fallback chains across model families
+- Calling GPT/Claude/Gemini from a single key and bill
+- Using cheaper or open models in AI coding assistants (Cursor, Cline) via a
+  custom OpenAI base URL
+
+## Quick start
+```python
+from openai import OpenAI
+client = OpenAI(
+    api_key="sk-...",
+    base_url="https://llm-api.vynexcloud.com/v1",
+)
+resp = client.chat.completions.create(
+    model="claude-opus-4-8",
+    messages=[{"role": "user", "content": "Hello"}],
+)
+```
+
+## Model families available
+- OpenAI: gpt-5.5, gpt-5.4, gpt-5.4-mini, gpt-4o-mini
+- Anthropic: claude-opus-4-8, claude-opus-4-7, claude-sonnet-4-6, claude-haiku-4-5
+- Google: gemini-3.1-pro-preview, gemini-3-pro-preview, gemini-2.5-pro, gemini-2.5-flash
+- Open: deepseek/deepseek-v3.2, qwen3.5-plus, GLM-5
+
+## Links
+- [Website](https://llm-api.vynexcloud.com/)
+- [Documentation](https://llm-api.vynexcloud.com/docs/)
+- [Pricing](https://llm-api.vynexcloud.com/pricing)
+- [Get an API key](https://llm-api.vynexcloud.com/register)
+- [Security & Privacy](https://llm-api.vynexcloud.com/security)
+
+## Optional
+- API status: https://status.vynexcloud.com
+- Contact: hello@vynexcloud.com

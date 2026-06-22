@@ -1,0 +1,7 @@
+# vynex-api-sdk is its own repo — don't track it here
+/vynex-api-sdk/
+
+# Node
+node_modules/
+.DS_Store
+*.log
