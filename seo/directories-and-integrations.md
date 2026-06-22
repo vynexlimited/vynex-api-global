@@ -39,6 +39,8 @@ Description: Vynex API is a unified LLM gateway. Call GPT, Claude, Gemini,
 DeepSeek, Qwen and GLM from a single OpenAI-compatible /v1 endpoint — keep
 your existing OpenAI SDK, change the base_url, and switch models by name.
 Per-token transparent pricing. Streaming and tool calling supported.
+**Pay with USDT** (TRC20/ERC20) — no foreign credit card needed, built for
+devs in MENA/SEA/LatAm where OpenAI/Anthropic cards get declined.
 Website: https://llm-api.vynexcloud.com/
 Pricing: [Free tier / Pay-as-you-go]
 ```
